@@ -214,11 +214,20 @@ do
 	ans = Convert.ToChar(Console.ReadLine());
 
 } while (ans == 'Y' || ans == 'y');
-*/
+
 
 //Arrays fixed size
 
 //int[] numbers = new int[4];// 4 element will come in this array
+
+
+Console.WriteLine(myNumbers[0]);
+
+
+
+
+
+
 //numbers[0] = 2;
 //numbers[1] = 12;
 //numbers[2] = 22;
@@ -236,5 +245,57 @@ foreach (int num in myNumbers)
 {
 	Console.WriteLine(num);
 }
-
+*/
 //var
+//Console.WriteLine(Math.Pow(2,2));
+
+
+//int[] numbers = new int[4];// C# give default values to uninitialized variables int=0, string = null, bool= true
+
+//Console.WriteLine(numbers);
+
+//string[] cities = { "Karachi", "Lahore", "Rawalpindi", "Sialkot", "Multan","Sialkot","Sialkot", "Sialkot", "Sialkot" };
+//Array.Sort(cities);
+//Array.Reverse(cities);
+
+////Console.WriteLine(Array.IndexOf(cities, "Sialkot"));//0
+////Console.WriteLine(Array.LastIndexOf(cities, "Sialkot"));//1
+
+
+//Console.WriteLine();
+
+
+//for (int i = 0; i < cities.Length; i++)
+//{
+//    Console.WriteLine(cities[i]);
+//}
+
+//Multidimensional Arrays (Array inside an array) 2D, 3D etc...
+//
+int[,] TopMarks =
+{   
+    { 88, 89},
+    { 92, 98},
+    { 78, 87},
+    { 99, 100}
+};
+// 4 x 2
+
+
+//Console.WriteLine(TopMarks[1,1]);
+
+for (int i = 0; i < TopMarks.GetLength(0); i++)
+{
+        Console.WriteLine($"Printing {i+1} array");
+    //Console.WriteLine();
+    for (int j = 0;  j < TopMarks.GetLength(1); j++)
+    {
+        Console.WriteLine(TopMarks[i,j]);
+    }
+    Console.WriteLine();
+
+}
+
+
+
+
