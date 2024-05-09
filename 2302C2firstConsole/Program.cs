@@ -372,13 +372,13 @@ foreach (int num in myNumbers)
 
 //4. Return with Parameters
 
-string Greet(string name, byte age)
-{
-    return ($"Hi {name}, Welcome to Our Console.\n Your age is: {age}");
-}
+//string Greet(string name, byte age)
+//{
+//    return ($"Hi {name}, Welcome to Our Console.\n Your age is: {age}");
+//}
 
-string msg = Greet("Jalal",78);
-Console.WriteLine(msg.ToUpper());
+//string msg = Greet("Jalal",78);
+//Console.WriteLine(msg.ToUpper());
 
 
 
@@ -390,3 +390,75 @@ Console.WriteLine(msg.ToUpper());
 
 //1 . Make 2 jagged arrays.
 //2. Create a function to print them.
+
+//exception handling (try | catch )
+try
+{
+    //Code to execute
+    int number = Convert.ToInt32(Console.ReadLine());
+    switch (number)
+    {
+        case 1:
+            Console.WriteLine("Hi");
+            break;
+        case 2:
+
+            Console.WriteLine("Hi , Hi");
+            
+            break;
+        case 3:
+            Console.WriteLine("Hi,hello, hi");
+            break;
+        case 4:
+            Console.WriteLine("Hi,hello, hi, hello");
+            break;
+
+        default:
+            Console.WriteLine("bye");
+            break;
+    }
+}
+catch (DivideByZeroException e)
+{
+    //Print a message on exception
+    Console.WriteLine("Can't Divide by zero");
+
+}
+catch (FormatException e)
+{
+    //Print a message on exception
+    Console.WriteLine("Invalid input we want an integer from you."+e);
+}
+catch (Exception e)
+{
+    //Print a message on exception
+    Console.WriteLine("Oops, Something went wrong.");
+}
+finally
+{
+    Console.WriteLine("Thanks for using our console application. Do recommend it to others :)" );
+}
+
+
+//int number = Convert.ToInt32(Console.ReadLine());
+//switch (number)
+//{
+//    case 1:
+//        Console.WriteLine("Hi");
+//        break;
+//    case 2:
+//        Console.WriteLine("Hi , Hi");
+//        break; 
+//    case 3:
+//        Console.WriteLine("Hi,hello, hi");
+//        break;
+//    case 4:
+//        Console.WriteLine("Hi,hello, hi, hello");
+//        break;
+
+//    default:
+//        Console.WriteLine("bye");
+//        break;
+//}
+
+// 
