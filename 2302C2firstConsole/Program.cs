@@ -392,73 +392,160 @@ foreach (int num in myNumbers)
 //2. Create a function to print them.
 
 //exception handling (try | catch )
-try
-{
-    //Code to execute
-    int number = Convert.ToInt32(Console.ReadLine());
-    switch (number)
-    {
-        case 1:
-            Console.WriteLine("Hi");
-            break;
-        case 2:
-
-            Console.WriteLine("Hi , Hi");
-            
-            break;
-        case 3:
-            Console.WriteLine("Hi,hello, hi");
-            break;
-        case 4:
-            Console.WriteLine("Hi,hello, hi, hello");
-            break;
-
-        default:
-            Console.WriteLine("bye");
-            break;
-    }
-}
-catch (DivideByZeroException e)
-{
-    //Print a message on exception
-    Console.WriteLine("Can't Divide by zero");
-
-}
-catch (FormatException e)
-{
-    //Print a message on exception
-    Console.WriteLine("Invalid input we want an integer from you."+e);
-}
-catch (Exception e)
-{
-    //Print a message on exception
-    Console.WriteLine("Oops, Something went wrong.");
-}
-finally
-{
-    Console.WriteLine("Thanks for using our console application. Do recommend it to others :)" );
-}
-
-
-//int number = Convert.ToInt32(Console.ReadLine());
-//switch (number)
+//try
 //{
-//    case 1:
-//        Console.WriteLine("Hi");
-//        break;
-//    case 2:
-//        Console.WriteLine("Hi , Hi");
-//        break; 
-//    case 3:
-//        Console.WriteLine("Hi,hello, hi");
-//        break;
-//    case 4:
-//        Console.WriteLine("Hi,hello, hi, hello");
-//        break;
+//    //Code to execute
+//    int number = Convert.ToInt32(Console.ReadLine());
+//    switch (number)
+//    {
+//        case 1:
+//            Console.WriteLine("Hi");
+//            break;
+//        case 2:
 
-//    default:
-//        Console.WriteLine("bye");
-//        break;
+//            Console.WriteLine("Hi , Hi");
+
+//            break;
+//        case 3:
+//            Console.WriteLine("Hi,hello, hi");
+//            break;
+//        case 4:
+//            Console.WriteLine("Hi,hello, hi, hello");
+//            break;
+
+//        default:
+//            Console.WriteLine("bye");
+//            break;
+//    }
+//}
+//catch (DivideByZeroException e)
+//{
+//    //Print a message on exception
+//    Console.WriteLine("Can't Divide by zero");
+
+//}
+//catch (FormatException e)
+//{
+//    //Print a message on exception
+//    Console.WriteLine("Invalid input we want an integer from you."+e);
+//}
+//catch (Exception e)
+//{
+//    //Print a message on exception
+//    Console.WriteLine("Oops, Something went wrong.");
+//}
+//finally
+//{
+//    Console.WriteLine("Thanks for using our console application. Do recommend it to others :)" );
 //}
 
-// 
+
+//Collections
+
+//Generics collection
+//fixed Datatype
+//dynamic size
+//List, Dictionary, Stack, Queues
+
+//Non-Generics collection
+// Datatype not fixed
+//dynamic size
+//ArrayList, Hashtable
+
+using System.Collections;
+using System.Linq;
+
+//Generics
+//List
+
+//List<string> SuperCars = new List<string>();
+//SuperCars.Add("Ferrari");
+//SuperCars.Add("Lamborghini");
+//SuperCars.Add("Buggati Chiron");
+
+
+//List<string> Cars = new List<string>();
+
+//Cars.Add("Honda civic");
+//Cars.Add("Honda Accord");
+//Cars.Add("Toyota Camry");
+//Cars.Add("toyota Fortuner");
+//Cars.Add("Suzuki Cultus");
+//Cars.Add("Toyota vitz");
+
+////Cars.Remove("Toyota vitz");
+////Cars.RemoveAt(3
+////
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
+//Cars.Insert(1, "Toyota Revo");
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
+
+//Cars.AddRange(SuperCars);
+
+////Cars.RemoveRange(0,2);
+
+////Cars.Clear();
+
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
+
+
+////Console.WriteLine(Cars[4]);
+//foreach (string car in Cars)
+//{
+//    Console.WriteLine(car);
+//}
+
+
+//Queues  (fifo: first in first out)
+Queue<string> names = new Queue<string>();
+names.Enqueue("Haris");
+names.Enqueue("ahmed");
+names.Enqueue("ashar");
+names.Enqueue("rayan");
+names.Enqueue("yaheya");
+names.Enqueue("abdullaah");
+names.Enqueue("talha");
+names.Enqueue("danish");
+names.Enqueue("sohaib");
+
+
+names.Dequeue();
+names.Dequeue();
+names.Dequeue();
+names.Dequeue();
+
+    names.Clear();
+
+foreach (string item in names)
+{
+    Console.WriteLine(item);
+}
+
+
+
+//Stack (lifo: last in first out)
+
+Stack<string> SecondRow = new Stack<string>();
+SecondRow.Push("Aisha");
+SecondRow.Push("ashbal");
+SecondRow.Push("mariam");
+SecondRow.Push("muzammil");
+SecondRow.Push("basit");
+
+
+
+
+SecondRow.Pop();
+SecondRow.Pop();
+SecondRow.Pop();
+SecondRow.Pop();
+
+SecondRow.Clear();
+
+foreach (string item in SecondRow)
+{
+    Console.WriteLine(item);
+}
+
+
+//
