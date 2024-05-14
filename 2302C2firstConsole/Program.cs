@@ -452,8 +452,8 @@ foreach (int num in myNumbers)
 //dynamic size
 //ArrayList, Hashtable
 
-using System.Collections;
-using System.Linq;
+//using System.Collections;
+//using System.Linq;
 
 //Generics
 //List
@@ -497,55 +497,127 @@ using System.Linq;
 
 
 //Queues  (fifo: first in first out)
-Queue<string> names = new Queue<string>();
-names.Enqueue("Haris");
-names.Enqueue("ahmed");
-names.Enqueue("ashar");
-names.Enqueue("rayan");
-names.Enqueue("yaheya");
-names.Enqueue("abdullaah");
-names.Enqueue("talha");
-names.Enqueue("danish");
-names.Enqueue("sohaib");
+//Queue<string> names = new Queue<string>();
+//names.Enqueue("Haris");
+//names.Enqueue("ahmed");
+//names.Enqueue("ashar");
+//names.Enqueue("rayan");
+//names.Enqueue("yaheya");
+//names.Enqueue("abdullah");
+//names.Enqueue("talha");
+//names.Enqueue("danish");
+//names.Enqueue("sohaib");
 
 
-names.Dequeue();
-names.Dequeue();
-names.Dequeue();
-names.Dequeue();
+//names.Dequeue();
+//names.Dequeue();
+//names.Dequeue();
+//names.Dequeue();
 
-    names.Clear();
+//    names.Clear();
 
-foreach (string item in names)
-{
-    Console.WriteLine(item);
-}
+//foreach (string item in names)
+//{
+//    Console.WriteLine(item);
+//}
 
 
 
 //Stack (lifo: last in first out)
 
-Stack<string> SecondRow = new Stack<string>();
-SecondRow.Push("Aisha");
-SecondRow.Push("ashbal");
-SecondRow.Push("mariam");
-SecondRow.Push("muzammil");
-SecondRow.Push("basit");
+//Stack<string> SecondRow = new Stack<string>();
+//SecondRow.Push("Aisha");
+//SecondRow.Push("ashbal");
+//SecondRow.Push("mariam");
+//SecondRow.Push("muzammil");
+//SecondRow.Push("basit");
 
 
 
 
-SecondRow.Pop();
-SecondRow.Pop();
-SecondRow.Pop();
-SecondRow.Pop();
+//SecondRow.Pop();
+//SecondRow.Pop();
+//SecondRow.Pop();
+//SecondRow.Pop();
 
-SecondRow.Clear();
+//SecondRow.Clear();
 
-foreach (string item in SecondRow)
+//foreach (string item in SecondRow)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+using System.Collections;
+//Dictionaries (Generics)
+//Dictionary<string, string> user = new Dictionary<string, string>();
+//user.Add("username","harisnaseer24");
+//user.Add("email","harisnaseer24@gmail.com");
+//user.Add("pass","abcdefghij");
+//user.Add("role","admin");
+//user.Add("image","harisnaseer.jpg");
+
+//Console.WriteLine(user["role"]);
+//user.Remove("image");
+////Console.WriteLine(user["role"]);
+
+//foreach (var item in user)
+//{
+//    string[] test = (item.ToString()).Split(",");
+//    string key = test[0].Trim('[');// [
+//    string value = test[1].Trim(']');// ]
+//    //Console.WriteLine(key);
+//    //Console.WriteLine(value);
+//    Console.WriteLine( $"The property is : {key} and  value is : {value}");
+//    //Console.WriteLine(test[1]);
+
+//}
+
+//Hashtables (Non generic)(no fixed datatype)
+
+Hashtable user = new Hashtable();
+user.Add("username", "harisnaseer24");
+user.Add("email", "harisnaseer24@gmail.com");
+user.Add("pass", 54544454544);
+user.Add("isadmin",true );
+user.Add(2.45, "harisnaseer.jpg");
+
+Console.WriteLine(user["isadmin"]);
+user.Remove("image");
+user.Contains(2.45);//true
+user.ContainsValue(true);//true
+
+//Console.WriteLine(user["role"]);
+foreach (DictionaryEntry item in user)
 {
-    Console.WriteLine(item);
+    Console.WriteLine(item.Key +" : "+ item.Value);
+}
+Console.WriteLine(user.GetHashCode());
+
+//ArrayList (Non Generic)(no fixed datatype)
+ArrayList Cars = new ArrayList();
+
+Cars.Add("Honda civic");
+Cars.Add("Honda Accord");
+Cars.Add("Toyota Camry");
+Cars.Add("toyota Fortuner");
+Cars.Add(240900);
+Cars.Add(.24f);
+
+//Cars.Remove("Toyota vitz");
+//Cars.RemoveAt(3)
+//
+Console.WriteLine(Cars.Contains("Toyota Revo"));
+Cars.Insert(1, "Toyota Revo");
+Console.WriteLine(Cars.Contains("Toyota Revo"));
+//Cars.RemoveRange(0,2);
+//Cars.Clear();
+Console.WriteLine(Cars.Contains("Toyota Revo"));
+
+//Console.WriteLine(Cars[4]);
+foreach (var car in Cars)
+{
+    Console.WriteLine(car);
 }
 
 
-//
