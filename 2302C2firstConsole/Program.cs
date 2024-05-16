@@ -548,7 +548,7 @@ foreach (int num in myNumbers)
 //}
 
 
-using System.Collections;
+//using System.Collections;
 //Dictionaries (Generics)
 //Dictionary<string, string> user = new Dictionary<string, string>();
 //user.Add("username","harisnaseer24");
@@ -570,54 +570,146 @@ using System.Collections;
 //    //Console.WriteLine(value);
 //    Console.WriteLine( $"The property is : {key} and  value is : {value}");
 //    //Console.WriteLine(test[1]);
-
 //}
 
 //Hashtables (Non generic)(no fixed datatype)
 
-Hashtable user = new Hashtable();
-user.Add("username", "harisnaseer24");
-user.Add("email", "harisnaseer24@gmail.com");
-user.Add("pass", 54544454544);
-user.Add("isadmin",true );
-user.Add(2.45, "harisnaseer.jpg");
+//Hashtable user = new Hashtable();
+//user.Add("username", "harisnaseer24");
+//user.Add("email", "harisnaseer24@gmail.com");
+//user.Add("pass", 54544454544);
+//user.Add("isadmin",true );
+//user.Add(2.45, "harisnaseer.jpg");
 
-Console.WriteLine(user["isadmin"]);
-user.Remove("image");
-user.Contains(2.45);//true
-user.ContainsValue(true);//true
+//Console.WriteLine(user["isadmin"]);
+//user.Remove("image");
+//user.Contains(2.45);//true
+//user.ContainsValue(true);//true
 
-//Console.WriteLine(user["role"]);
-foreach (DictionaryEntry item in user)
-{
-    Console.WriteLine(item.Key +" : "+ item.Value);
-}
-Console.WriteLine(user.GetHashCode());
+////Console.WriteLine(user["role"]);
+//foreach (DictionaryEntry item in user)
+//{
+//    Console.WriteLine(item.Key +" : "+ item.Value);
+//}
+//Console.WriteLine(user.GetHashCode());
 
 //ArrayList (Non Generic)(no fixed datatype)
-ArrayList Cars = new ArrayList();
+//ArrayList Cars = new ArrayList();
 
-Cars.Add("Honda civic");
-Cars.Add("Honda Accord");
-Cars.Add("Toyota Camry");
-Cars.Add("toyota Fortuner");
-Cars.Add(240900);
-Cars.Add(.24f);
+//Cars.Add("Honda civic");
+//Cars.Add("Honda Accord");
+//Cars.Add("Toyota Camry");
+//Cars.Add("toyota Fortuner");
+//Cars.Add(240900);
+//Cars.Add(.24f);
 
 //Cars.Remove("Toyota vitz");
 //Cars.RemoveAt(3)
 //
-Console.WriteLine(Cars.Contains("Toyota Revo"));
-Cars.Insert(1, "Toyota Revo");
-Console.WriteLine(Cars.Contains("Toyota Revo"));
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
+//Cars.Insert(1, "Toyota Revo");
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
 //Cars.RemoveRange(0,2);
 //Cars.Clear();
-Console.WriteLine(Cars.Contains("Toyota Revo"));
+//Console.WriteLine(Cars.Contains("Toyota Revo"));
 
 //Console.WriteLine(Cars[4]);
-foreach (var car in Cars)
+//foreach (var car in Cars)
+//{
+//    Console.WriteLine(car);
+//}
+
+//String Methods
+
+//string test = """{ "name": "John Doe"}""";
+
+//using System.Collections;
+
+//string test = "we are  Learnnig \"C#\"";
+//Console.WriteLine(test);
+//Console.WriteLine(test.Replace("Learnnig","Mastering"));
+//Console.WriteLine(test.Replace("C#","Java"));
+
+//string email = "hdkjhdkjhkhf";
+//int age = 75;
+
+//login start
+
+//login end
+
+
+//CODING Best Practices
+// Indentation (Readable by using spaces and new lines) 
+// Comments //Sir yahan switch case shuru kia ha
+// Meaningful identifiers (variable names)
+// errors (exception handling) 
+//less repeatation
+
+
+//Objects and Classes
+
+Aeroplane Boeing707 = new Aeroplane();//default constructor
+
+
+//Boeing707.Name = "Boeing 707";
+//Boeing707.takeOff();
+//Console.WriteLine(Boeing707.AirLine);
+
+Aeroplane f16 = new Aeroplane("PAF");
+
+
+Aeroplane f17 = new Aeroplane("PAF","F-17 Thunder",2,2,"8500hp");
+f17.takeOff();
+f17.land();
+
+public class Aeroplane
 {
-    Console.WriteLine(car);
+    public string? AirLine;
+    public string? Name;
+    public int Seats;
+    public int Crew;
+    public string? Power;
+
+    //Contstructor
+    public Aeroplane()
+    {
+        this.AirLine = "Not specified";
+        this.Name = "unknown";
+        this.Seats = 0;
+        this.Crew = 0;
+       this.Power = null;
+    } 
+    
+    public Aeroplane(string AirLine)
+    {
+        this.AirLine = AirLine;
+        this.Name = "unknown";
+        this.Seats = 0;
+        this.Crew = 0;
+       this.Power = null;
+    }
+
+
+    //Paremeterized constructor (Overloading)
+    public Aeroplane(string ALine, string name, int seat , int crew, string pow)
+    {
+        this.AirLine = ALine;
+        this.Name = name;
+        this.Seats = seat;
+        this.Crew = crew;
+       this.Power = pow;
+    }
+    public void takeOff()
+    {
+        Console.WriteLine($"{this.Name} is taking off. Best Wishes..!");
+    }
+    public void land()
+    {
+        Console.WriteLine($"{this.Name} is Landing at the 4th runway..! ");
+    }
+
 }
+
+
 
 
