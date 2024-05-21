@@ -648,68 +648,136 @@ foreach (int num in myNumbers)
 
 //Objects and Classes
 
-Aeroplane Boeing707 = new Aeroplane();//default constructor
+//Aeroplane Boeing707 = new Aeroplane();//default constructor
 
 
-//Boeing707.Name = "Boeing 707";
-//Boeing707.takeOff();
-//Console.WriteLine(Boeing707.AirLine);
+////Boeing707.Name = "Boeing 707";
+////Boeing707.takeOff();
+////Console.WriteLine(Boeing707.AirLine);
 
-Aeroplane f16 = new Aeroplane("PAF");
+//Aeroplane f16 = new Aeroplane("PAF");
 
 
-Aeroplane f17 = new Aeroplane("PAF","F-17 Thunder",2,2,"8500hp");
-f17.takeOff();
-f17.land();
+//Aeroplane f17 = new Aeroplane("PAF","F-17 Thunder",2,2,"8500hp");
+//f17.takeOff();
+//f17.land();
 
-public class Aeroplane
-{
-    public string? AirLine;
-    public string? Name;
-    public int Seats;
-    public int Crew;
-    public string? Power;
+//public class Aeroplane
+//{
+//    public string? AirLine;
+//    public string? Name;
+//    public int Seats;
+//    public int Crew;
+//    public string? Power;
 
-    //Contstructor
-    public Aeroplane()
-    {
-        this.AirLine = "Not specified";
-        this.Name = "unknown";
-        this.Seats = 0;
-        this.Crew = 0;
-       this.Power = null;
-    } 
+//    //Contstructor
+//    public Aeroplane()
+//    {
+//        this.AirLine = "Not specified";
+//        this.Name = "unknown";
+//        this.Seats = 0;
+//        this.Crew = 0;
+//       this.Power = null;
+//    } 
     
-    public Aeroplane(string AirLine)
-    {
-        this.AirLine = AirLine;
-        this.Name = "unknown";
-        this.Seats = 0;
-        this.Crew = 0;
-       this.Power = null;
-    }
+//    public Aeroplane(string AirLine)
+//    {
+//        this.AirLine = AirLine;
+//        this.Name = "unknown";
+//        this.Seats = 0;
+//        this.Crew = 0;
+//       this.Power = null;
+//    }
 
 
-    //Paremeterized constructor (Overloading)
-    public Aeroplane(string ALine, string name, int seat , int crew, string pow)
+//    //Paremeterized constructor (Overloading)
+//    public Aeroplane(string ALine, string name, int seat , int crew, string pow)
+//    {
+//        this.AirLine = ALine;
+//        this.Name = name;
+//        this.Seats = seat;
+//        this.Crew = crew;
+//       this.Power = pow;
+//    }
+//    public void takeOff()
+//    {
+//        Console.WriteLine($"{this.Name} is taking off. Best Wishes..!");
+//    }
+//    public void land()
+//    {
+//        Console.WriteLine($"{this.Name} is Landing at the 4th runway..! ");
+//    }
+
+//}
+
+//OOP (OBJECT ORIENTED PROGRAMMING)
+//it is an approach to code cleaner and better.
+//readable
+//reusable
+//optimize
+//proper structure of the code is maintained.
+
+
+
+//Main Pillars of OOP
+
+//1. Interitance
+//2. Polymorphism
+// Method Overloading
+// Method Overriding
+//3. Abstraction
+//4. Encapsulation
+
+
+
+//Inheritance
+Vehicle abc = new Vehicle("AAZ-789", "Metallic grey");
+abc.Run();
+
+Car mercedez = new Car("TZ-8908", "Black", "Mercedez", "Benz C-Class", 20000000);
+mercedez.Run();
+mercedez.Run(300);
+
+// Parent class | Base Class | Super Class
+public class Vehicle
+{
+    public string regNo;
+    public string color;
+
+    public Vehicle(string regno, string color)
     {
-        this.AirLine = ALine;
-        this.Name = name;
-        this.Seats = seat;
-        this.Crew = crew;
-       this.Power = pow;
+        this.regNo = regno;
+        this.color = color;
+    } 
+    public void Run()
+    {
+        Console.WriteLine($"{this.regNo} vehicle started running");
     }
-    public void takeOff()
+}
+// Child class | Derived Class | Sub Class
+public class Car : Vehicle
+{
+
+    public string brand;
+    public string model;
+    public int price;
+
+    public Car(string regno, string color, string brand, string model, int price) : base(regno , color)
     {
-        Console.WriteLine($"{this.Name} is taking off. Best Wishes..!");
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
     }
-    public void land()
+
+    //method overriding
+    public void Run()
     {
-        Console.WriteLine($"{this.Name} is Landing at the 4th runway..! ");
+        Console.WriteLine($"{this.brand} {this.model} {this.regNo} started running");
+    }
+    //method overloading
+    public void Run(int speed)
+    {
+        Console.WriteLine($"{this.brand} {this.model} {this.regNo} started running at {speed} MPH.");
     }
 
 }
-
-
-
-
