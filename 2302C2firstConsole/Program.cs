@@ -799,6 +799,8 @@ foreach (int num in myNumbers)
 //Car bv = new Car("2008", "Black", "Toyota", "Mark X", 3500000);
 //Car g = new Car("2008", "Black", "Toyota", "Mark X", 3500000);
 //Car MadrkX = new Car("2008", "Black", "Toyota", "Mark X", 3500000);
+
+
 //MarkX.Run();
 //MarkX.Run(300);
 
@@ -812,14 +814,17 @@ foreach (int num in myNumbers)
 //Console.WriteLine(Car.carCount);
 //Car.beginRace();
 
+
+
 //abstract public class Vehicle
 //{
 //    public string regNo;
 //    public string color;
-//    public static int totalCars=0;
-//    public static int totalAmount=0;
-//    public static int payingCars=0;
-//    public static int nonPayingCars=0;
+
+//    public static int totalCars = 0;
+//    public static int totalAmount = 0;
+//    public static int payingCars = 0;
+//    public static int nonPayingCars = 0;
 //    public virtual void Run()
 //    {
 //        Console.WriteLine($"{this.regNo} vehicle started running");
@@ -831,8 +836,8 @@ foreach (int num in myNumbers)
 //    public string brand;
 //    public string model;
 //    public int price;
-//    public int basePrice=2;
-//    public static int carCount=0;
+//    public int basePrice = 2;
+//    public static int carCount = 0;
 //    public Car(string regno, string color, string brand, string model, int price)
 //    {
 //        this.regNo = regno;
@@ -841,8 +846,9 @@ foreach (int num in myNumbers)
 //        this.model = model;
 //        this.price = price;
 //        totalCars++;
+//        carCount++;
 //    }
-//    public  void beginRace()
+//    public void paytax()
 //    {
 //        Console.WriteLine("Boom..! the race has begun. May the best be winner.");
 //        payingCars++;
@@ -850,7 +856,7 @@ foreach (int num in myNumbers)
 
 //    }
 //    //method overriding
-//    public override void Run()
+//    public  void passWithoutPaying()
 //    {
 //        Console.WriteLine($"{this.brand} {this.model} {this.regNo} started running");
 //        nonPayingCars++;
@@ -860,13 +866,13 @@ foreach (int num in myNumbers)
 //}
 
 //Interfaces
-FrontEndDeveloper haris = new FrontEndDeveloper();
-haris.ComplexDesign("Haris Naseer");
-haris.SimpleDesign();
+//FrontEndDeveloper haris = new FrontEndDeveloper();
+//haris.ComplexDesign("Haris Naseer");
+//haris.SimpleDesign();
 
-FullStackDeveloper usama = new FullStackDeveloper();
-usama.SimpleDesign();
-usama.ComplexAPIs();
+//FullStackDeveloper usama = new FullStackDeveloper();
+//usama.SimpleDesign();
+//usama.ComplexAPIs();
 
 //interface topics{
 
@@ -874,55 +880,120 @@ usama.ComplexAPIs();
 //        Static,
 //       Abstract
 //} 
-interface FrontEndDevelopment
-{
-    public void SimpleDesign();
-    public void ComplexDesign(string name);
+//interface FrontEndDevelopment
+//{
+//    public void SimpleDesign();
+//    public void ComplexDesign(string name);
 
-}
-interface BackEndDevelopment
-{
-    public void SimpleCrud();
-    public void ComplexAPIs( );
-    public void Authentication();
+//}
+//interface BackEndDevelopment
+//{
+//    public void SimpleCrud();
+//    public void ComplexAPIs( );
+//    public void Authentication();
 
-}
+//}
 
-public class FrontEndDeveloper: FrontEndDevelopment
-{
-    //method implementation
-    public void SimpleDesign() {
-        Console.WriteLine("We will provide you simple and responsive design using HTML, CSS and JS.");
-    }
-    public void ComplexDesign(string name) {
-        Console.WriteLine($"Hi this is {name}, We will provide you animated and responsive design using HTML, CSS, JS, React, Nextjs.");
-    }
+//public class FrontEndDeveloper: FrontEndDevelopment
+//{
+//    //method implementation
+//    public void SimpleDesign() {
+//        Console.WriteLine("We will provide you simple and responsive design using HTML, CSS and JS.");
+//    }
+//    public void ComplexDesign(string name) {
+//        Console.WriteLine($"Hi this is {name}, We will provide you animated and responsive design using HTML, CSS, JS, React, Nextjs.");
+//    }
 
-}
+//}
 
 
 
 //Multiple Inheritance
-public class FullStackDeveloper: FrontEndDevelopment, BackEndDevelopment
+//public class FullStackDeveloper: FrontEndDevelopment, BackEndDevelopment
+//{
+//    public void SimpleDesign()
+//    {
+//        Console.WriteLine("We will provide you simple and responsive design using HTML, CSS and JS.");
+//    }
+//    public void ComplexDesign(string name)
+//    {
+//        Console.WriteLine($"Hi this is {name}, We will provide you animated and responsive design using HTML, CSS, JS, React, Nextjs.");
+//    }
+//    public void SimpleCrud()
+//    {
+//        Console.WriteLine("We will provide you simple crud operations.");
+//    }
+//    public void ComplexAPIs()
+//    {
+//        Console.WriteLine($"We will provide you complex APIs.");
+//    }
+//    public void Authentication()
+//    {
+//        Console.WriteLine($" We will provide you Authentication.");
+//    }
+//}
+
+//Access  Modifiers
+//1. Public     | anyone can access from any where in the program.
+//2. Private    | only owner class can access .
+//3. Protected  | only owner class and child class can access .
+
+
+Products neckBand = new Products(1500, "Lenovo Neckband" ,"good quality product with extra base and long range connectivity.");
+//neckBand.name="Lenovo Neckband";
+//neckBand.price;
+//neckBand.description;
+//Console.WriteLine(neckBand.price);
+
+//neckBand.showPrice();
+neckBand.callShowPrice();
+
+
+Gadgets iphone = new Gadgets(230000, "iphone 15 pro max", "acha phone ha", "phones");
+iphone.ShowGadget();
+
+
+public class Products
 {
-    public void SimpleDesign()
+   public string name;
+   private int price;
+   protected string description;
+
+    public Products(int price, string name, string description)
     {
-        Console.WriteLine("We will provide you simple and responsive design using HTML, CSS and JS.");
+        this.name = name;
+        this.price = price;
+        this.description = description;
     }
-    public void ComplexDesign(string name)
+
+    private void showPrice()
     {
-        Console.WriteLine($"Hi this is {name}, We will provide you animated and responsive design using HTML, CSS, JS, React, Nextjs.");
+        Console.WriteLine(this.price);
     }
-    public void SimpleCrud()
+    public void callShowPrice()
     {
-        Console.WriteLine("We will provide you simple crud operations.");
+        this.showPrice();
     }
-    public void ComplexAPIs()
-    {
-        Console.WriteLine($"We will provide you complex APIs.");
-    }
-    public void Authentication()
-    {
-        Console.WriteLine($" We will provide you Authentication.");
-    }
+
+
+
 }
+
+public class Gadgets : Products
+{
+    public string category;
+
+    public Gadgets(int price, string name, string description, string category) : base (price, name, description)
+    {
+      this.category=category;
+    }
+     
+    public void ShowGadget()
+    {
+        Console.WriteLine(this.name);
+        this.callShowPrice();
+        Console.WriteLine(this.description);
+        Console.WriteLine(this.category);
+
+    }
+}  
