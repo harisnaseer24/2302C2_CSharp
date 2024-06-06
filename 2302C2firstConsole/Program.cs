@@ -1068,3 +1068,61 @@ foreach (int num in myNumbers)
 //string greet = (10 < 10) ? "hi" : "bye";
 
 //Console.WriteLine(greet);
+
+//getters and setters
+
+//Animal cat = new Animal();
+//cat.Name = "Tom";
+//cat.Age = 40;
+//Console.WriteLine(cat.Age);
+
+
+//public class Animal
+//{
+//    public string? Name { get; set; } //auto complete properties
+//    private int  age;
+
+
+//    public int Age
+//    {
+//        get { return age; }
+
+//        set { 
+
+//            if(value < 10)
+//            {
+
+//            age = value;
+//            }
+//            else
+//            {
+//                age = 10;
+//            }
+//        }
+//    }
+//}
+
+
+
+//enums
+//Implicit typecasting 
+//Explicit typecasting 
+
+
+Console.WriteLine($"{pakBatters.Fakhar} has jersey no {(int)pakBatters.Fakhar}");
+
+enum pakBatters
+{
+    Babar =56,
+    Rizwan = 33,
+    Fakhar =45,
+    Imad =75
+}
+
+
+//switch() { }
+
+
+//case (int)pakBatters.Fakhar:
+//    Console.WriteLine("January");
+//    break;
