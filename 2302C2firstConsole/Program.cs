@@ -1109,15 +1109,15 @@ foreach (int num in myNumbers)
 //Explicit typecasting 
 
 
-Console.WriteLine($"{pakBatters.Fakhar} has jersey no {(int)pakBatters.Fakhar}");
+//Console.WriteLine($"{pakBatters.Fakhar} has jersey no {(int)pakBatters.Fakhar}");
 
-enum pakBatters
-{
-    Babar =56,
-    Rizwan = 33,
-    Fakhar =45,
-    Imad =75
-}
+//enum pakBatters
+//{
+//    Babar =56,
+//    Rizwan = 33,
+//    Fakhar =45,
+//    Imad =75
+//}
 
 
 //switch() { }
@@ -1126,3 +1126,73 @@ enum pakBatters
 //case (int)pakBatters.Fakhar:
 //    Console.WriteLine("January");
 //    break;
+
+//namespaces : a collection of related classes and sub namespaces.
+
+//using System;
+//using System.Collections;
+using TaxMangementSytem;
+using Indexers;
+
+
+Tax tolltax = new Tax();
+
+tolltax.amount = 5000;
+
+Vehicle vehicle = new Vehicle();
+vehicle.regNum = 4545;
+
+
+
+//Indexers : when we want our object to behave like an array we implement indexers.
+
+fruits basket = new fruits();
+basket[0] = "Langra";
+basket[1] = "Chaunsa";
+basket[2] = "Daseri";
+basket[3] = "Sindhri";
+basket[4] = "Anwer Ritol";
+
+//Console.WriteLine(basket[3]);
+
+//foreach (string item in basket.fruitNames)
+//{
+//    Console.WriteLine(item);
+//}
+
+//Records
+
+User ahmed = new User();
+ahmed.id = 1;
+ahmed.name = "Ahmed Hassan";
+
+
+User haris = new User();
+haris.id = 1;
+haris.name = "Ahmed Hassan";
+
+
+//Console.WriteLine(ahmed);
+Console.WriteLine(ahmed == haris);
+
+User1 talha = new User1();
+talha.id = 2;
+talha.name = "Mirza talha";
+
+User1 abdullah = new User1();
+abdullah.id = 2;
+abdullah.name = "Mirza talha";
+
+//Console.WriteLine(talha);
+Console.WriteLine(talha == abdullah);
+
+public class User{
+    public int id { get; set; }
+    public string? name { get; set; }
+}
+
+public record User1
+{
+    public int id { get; set; }
+    public string name { get; set; }
+}
