@@ -1131,27 +1131,27 @@ foreach (int num in myNumbers)
 
 //using System;
 //using System.Collections;
-using TaxMangementSytem;
-using Indexers;
+//using TaxMangementSytem;
+//using Indexers;
 
 
-Tax tolltax = new Tax();
+//Tax tolltax = new Tax();
 
-tolltax.amount = 5000;
+//tolltax.amount = 5000;
 
-Vehicle vehicle = new Vehicle();
-vehicle.regNum = 4545;
+//Vehicle vehicle = new Vehicle();
+//vehicle.regNum = 4545;
 
 
 
-//Indexers : when we want our object to behave like an array we implement indexers.
+////Indexers : when we want our object to behave like an array we implement indexers.
 
-fruits basket = new fruits();
-basket[0] = "Langra";
-basket[1] = "Chaunsa";
-basket[2] = "Daseri";
-basket[3] = "Sindhri";
-basket[4] = "Anwer Ritol";
+//fruits basket = new fruits();
+//basket[0] = "Langra";
+//basket[1] = "Chaunsa";
+//basket[2] = "Daseri";
+//basket[3] = "Sindhri";
+//basket[4] = "Anwer Ritol";
 
 //Console.WriteLine(basket[3]);
 
@@ -1160,39 +1160,74 @@ basket[4] = "Anwer Ritol";
 //    Console.WriteLine(item);
 //}
 
-//Records
+//Records 
 
-User ahmed = new User();
-ahmed.id = 1;
-ahmed.name = "Ahmed Hassan";
-
-
-User haris = new User();
-haris.id = 1;
-haris.name = "Ahmed Hassan";
+//User ahmed = new User();
+//ahmed.id = 1;
+//ahmed.name = "Ahmed Hassan";
 
 
-//Console.WriteLine(ahmed);
-Console.WriteLine(ahmed == haris);
+//User haris = new User();
+//haris.id = 1;
+//haris.name = "Ahmed Hassan";
 
-User1 talha = new User1();
-talha.id = 2;
-talha.name = "Mirza talha";
 
-User1 abdullah = new User1();
-abdullah.id = 2;
-abdullah.name = "Mirza talha";
+////Console.WriteLine(ahmed);
+//Console.WriteLine(ahmed == haris);
 
-//Console.WriteLine(talha);
-Console.WriteLine(talha == abdullah);
+//User1 talha = new User1();
+//talha.id = 2;
+//talha.name = "Mirza talha";
 
-public class User{
-    public int id { get; set; }
-    public string? name { get; set; }
-}
+//User1 abdullah = new User1();
+//abdullah.id = 2;
+//abdullah.name = "Mirza talha";
 
-public record User1
+////Console.WriteLine(talha);
+//Console.WriteLine(talha == abdullah);
+
+//public class User{
+//    public int id { get; set; }
+//    public string? name { get; set; }
+//}
+
+//public record User1
+//{
+//    public int id { get; set; }
+//    public string name { get; set; }
+//}
+
+
+//events
+
+myCar Civic = new myCar();
+Civic.speedUp += new myCar.speedCar(myCar.carMoved);
+Civic.drive();
+
+
+public class myCar
 {
-    public int id { get; set; }
-    public string name { get; set; }
+    public delegate void speedCar();
+    public event speedCar speedUp;
+    public int speed = 0;
+
+    public void drive()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            if (i >5)
+            {
+                speedUp(); }
+                Console.WriteLine($"the car is moving at {i} mph");
+                System.Threading.Thread.Sleep(1000);
+
+           
+        }
+    }
+    public static void carMoved()
+    {
+        Console.WriteLine("the speed limit has exceeded");
+    }
+
+
 }
